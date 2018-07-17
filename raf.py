@@ -47,64 +47,43 @@ spotPrice = client.get_spot_price().amount
 #print("My account balance:",account.balance)
 
 
-#ratio = float(buyPrice)/float(sellPrice) - 1
-#print("Calculated Ratio is ",ratio)
+ratio = float(buyPrice)/float(sellPrice) - 1
+print("Calculated Ratio is ",ratio)
 
 
-#ths = float(thresh)
-#bp = float(buyPrice)
-#print("start loop>>")
-#buys = 0
-#sells = 0
-#while bp < ths:
-  #  print("loop:This is the buy price", buyPrice)
-   #print("loop:This is the spot price", spotPrice)
-    #print("loop:This is my buy price low range ", pricelow1)
-    #print("loop:This is my buy price high range ", pricelow2)
-    #print("loop:My sell price ", mySellPrice)
-    #buyPrice = client.get_buy_price().amount
-    ##buyPrice = input("buy price test input: ")
-    #bp = float(buyPrice)
-    #if (bp >= pricelow1) and (bp <= pricelow2):
-     #   print("buying now this price:",bp)
-      #  ##account.buy(amount='.000704225', currency='BTC')
-       # buys += 1
-       # if buys > 2:
-            #exit()
-    #sellPrice = client.get_sell_price().amount
-    #print("Sell price: ",sellPrice)
-    ##sellPrice = input("Sell price input: ")
-    #print("Current sell price", sellPrice)
-    #if float(sellPrice) >= mySellPrice:
-      #  print("selling now at ",sellPrice)
-       # account.sell(amount='.000704225', currency='BTC')
-        #sells += 1
-        #if sells > 2:
-           # exit()
-    #else:
-      #  print("run loop again")
+ths = float(thresh)
+bp = float(buyPrice)
+print("start loop>>")
+buys = 0
+sells = 0
+while bp < ths:
+    print("loop:This is the buy price", buyPrice)
+   print("loop:This is the spot price", spotPrice)
+   print("loop:This is my buy price low range ", pricelow1)
+    print("loop:This is my buy price high range ", pricelow2)
+    print("loop:My sell price ", mySellPrice)
+    buyPrice = client.get_buy_price().amount
+    buyPrice = input("buy price test input: ")
+    bp = float(buyPrice)
+    if (bp >= pricelow1) and (bp <= pricelow2):
+        print("buying now this price:",bp)
+      account.buy(amount='.000704225', currency='BTC')
+        buys += 1
+        if buys > 2:
+            exit()
+    sellPrice = client.get_sell_price().amount
+    print("Sell price: ",sellPrice)
+    sellPrice = input("Sell price input: ")
+    print("Current sell price", sellPrice)
+    if float(sellPrice) >= mySellPrice:
+       print("selling now at ",sellPrice)
+        account.sell(amount='.000704225', currency='BTC')
+        sells += 1
+        if sells > 2:
+           exit()
+    else:
+        print("run loop again")
 
 
 
 print(sellPriceL)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
