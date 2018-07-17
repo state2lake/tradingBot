@@ -10,7 +10,7 @@ client = Client(api_key, api_secret)
 account = "0x998dd1230AAb93e7B7f01878db960E615Ae15A79"
 
 #This is turning the balance amount(BTC = #.####) to an integer
-#amount = float(account.balance.amount)
+amount = float(account.balance.amount)
 
 #Ratio threshold
 thresh = 7299
